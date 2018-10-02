@@ -112,7 +112,7 @@ public:
     template <typename TL> void set_from(const TL &val) {}
     template <typename TL, typename CT, typename... CARGS>
     void set_from(const TL &val) {
-      set<CT>(val.get<CT>());
+      set<CT>(val.template get<CT>());
       set_from<TL, CARGS...>(val);
     }
 
